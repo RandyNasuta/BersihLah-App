@@ -78,13 +78,17 @@ public class Order extends AppCompatActivity {
             public void onClick(View view) {
                 String hour = hourInput.getEditText().getText().toString();
                 String minute = minuteInput.getEditText().getText().toString();
-                String price;
+                String price = "";
 
-                if(serviceType.equals("All in One")){
-                    price = Integer.toString((int) Integer.parseInt(hour)*100000+Integer.parseInt(minute)*50000/30);
-                }
-                else{
-                    price = Integer.toString((int) Integer.parseInt(hour)*60000+Integer.parseInt(minute)*30000/30);
+                if(!hour.equals("") && !minute.equals("")){
+                    if(serviceType.equals("All in One")){
+                        price = Integer.toString((int) Integer.parseInt(hour)*100000+Integer.parseInt(minute)*50000/30);
+                    }
+                    else{
+                        price = Integer.toString((int) Integer.parseInt(hour)*60000+Integer.parseInt(minute)*30000/30);
+                    }
+                }else{
+                    price = "0";
                 }
 
                 totalPrice.setText("Total Price: " + price);

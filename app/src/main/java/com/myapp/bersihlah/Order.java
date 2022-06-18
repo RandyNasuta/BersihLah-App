@@ -78,20 +78,24 @@ public class Order extends AppCompatActivity {
             public void onClick(View view) {
                 String hour = hourInput.getEditText().getText().toString();
                 String minute = minuteInput.getEditText().getText().toString();
-                String price = "";
+                String price="0";
+                validateMinute();
+                validateHour();
 
-                if(!hour.equals("") && !minute.equals("")){
-                    if(serviceType.equals("All in One")){
-                        price = Integer.toString((int) Integer.parseInt(hour)*100000+Integer.parseInt(minute)*50000/30);
+                if(validateMinute() && validateHour()) {
+                    if(minute.isEmpty()){
+                        minute = "0";
                     }
-                    else{
-                        price = Integer.toString((int) Integer.parseInt(hour)*60000+Integer.parseInt(minute)*30000/30);
+                    if(hour.isEmpty()){
+                        hour = "0";
                     }
-                }else{
-                    price = "0";
+                    if (serviceType.equals("All in One")) {
+                        price = Integer.toString((int) Integer.parseInt(hour) * 100000 + Integer.parseInt(minute) * 50000 / 30);
+                    } else {
+                        price = Integer.toString((int) Integer.parseInt(hour) * 60000 + Integer.parseInt(minute) * 30000 / 30);
+                    }
                 }
-
-                totalPrice.setText("Total Price: " + price);
+                totalPrice.setText("Total Price:Rp. " + price);
             }
         });
     }
@@ -134,8 +138,13 @@ public class Order extends AppCompatActivity {
 
     public boolean validateHour(){
         String hour = hourInput.getEditText().getText().toString();
-        if(hour.isEmpty()){
-            hourInput.setError("Please fill in your hour");
+        String minute = minuteInput.getEditText().getText().toString();
+
+        if(!minute.isEmpty() && hour.isEmpty() && checkIfNum(minute)){
+            hour = "0";
+        }
+        if(((hour.isEmpty() && minute.isEmpty())||!checkIfNum(hour))||Integer.parseInt(hour)>5){
+            hourInput.setError("Please fill in your hour (max 5)");
             return false;
         }else{
             hourInput.setError(null);
@@ -144,12 +153,27 @@ public class Order extends AppCompatActivity {
         }
     }
 
+    public boolean checkIfNum(String check){
+        try {
+            Integer.parseInt(check);
+            return true;
+        } catch(NumberFormatException e){
+            return false;
+        }
+    }
+
     public boolean validateMinute(){
         String minute = minuteInput.getEditText().getText().toString();
-        if(minute.isEmpty()){
-            minuteInput.setError("Please fill in your minute");
+        String hour = hourInput.getEditText().getText().toString();
+
+        if(!hour.isEmpty() && minute.isEmpty() && checkIfNum(hour)){
+            minute = "0";
+        }
+        if(((minute.isEmpty() && hour.isEmpty())|!checkIfNum(minute))||Integer.parseInt(minute)>59){
+            minuteInput.setError("Please fill in your minute with numbers max(59)");
             return false;
-        }else{
+        }
+        else{
             minuteInput.setError(null);
             minuteInput.setErrorEnabled(false);
             return true;
@@ -181,13 +205,20 @@ public class Order extends AppCompatActivity {
         String minute = minuteInput.getEditText().getText().toString();
         String paymentMethod = paymentMethodInput.getEditText().getText().toString();
         String orderID = getPassedUsername()+getPassedPhoneNo()+ (int)(Math.random()*10);
-        String price;
+        String price = "0";
 
-        if(serviceType.equals("All in One")){
-            price = Integer.toString((int) Integer.parseInt(hour)*100000+Integer.parseInt(minute)*50000/30);
-        }
-        else{
-            price = Integer.toString((int) Integer.parseInt(hour)*60000+Integer.parseInt(minute)*30000/30);
+        if(!hour.isEmpty() || !minute.isEmpty()) {
+            if(minute.isEmpty()){
+                minute = "0";
+            }
+            if(hour.isEmpty()){
+                hour = "0";
+            }
+            if (serviceType.equals("All in One")) {
+                price = Integer.toString((int) Integer.parseInt(hour) * 100000 + Integer.parseInt(minute) * 50000 / 30);
+            } else {
+                price = Integer.toString((int) Integer.parseInt(hour) * 60000 + Integer.parseInt(minute) * 30000 / 30);
+            }
         }
 
         String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());

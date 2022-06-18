@@ -20,13 +20,10 @@ public class OrderConfirmation extends AppCompatActivity {
     FirebaseDatabase rootNode;
     DatabaseReference ref;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_confirmation);
-
 
         address = findViewById(R.id.orderAddress);
         duration = findViewById(R.id.orderDuration);
@@ -36,8 +33,6 @@ public class OrderConfirmation extends AppCompatActivity {
 
         homeButton = findViewById(R.id.backHomeButton);
         cancelButton = findViewById(R.id.cancelButton);
-
-
 
         address.setText(getIntent().getStringExtra("address"));
         date.setText(getIntent().getStringExtra("date"));
@@ -78,11 +73,9 @@ public class OrderConfirmation extends AppCompatActivity {
 
     }
 
-
     public void setOrderID(String orderID) {
         this.orderID = orderID;
     }
-
     public String getOrderID() {
         return orderID;
     }

@@ -54,10 +54,6 @@ public class BannerItemsAdapter extends PagerAdapter {
         Glide.with(context).load(bannerItemsList.get(position).getImageUrl()).into(bannerImage);
         container.addView(view);
 
-
         return view;
-
-
     }
-
 }

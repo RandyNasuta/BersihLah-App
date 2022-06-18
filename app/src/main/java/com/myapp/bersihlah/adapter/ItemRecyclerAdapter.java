@@ -41,13 +41,7 @@ public class ItemRecyclerAdapter extends RecyclerView.Adapter<ItemRecyclerAdapte
         holder.price.setText(order.getPrice());
         holder.status.setText("Completed");
         holder.date.setText(order.getDate());
-
-
-
-
     }
-
-
 
     @Override
     public int getItemCount() {
@@ -55,7 +49,6 @@ public class ItemRecyclerAdapter extends RecyclerView.Adapter<ItemRecyclerAdapte
     }
 
     public static final class ItemViewHolder extends RecyclerView.ViewHolder{
-
 
         TextView cat, date, status, price;
 
@@ -66,8 +59,6 @@ public class ItemRecyclerAdapter extends RecyclerView.Adapter<ItemRecyclerAdapte
             date = itemView.findViewById(R.id.orderHistoryDate);
             price = itemView.findViewById(R.id.orderHistoryPrice);
             status = itemView.findViewById(R.id.orderHistoryStatus);
-
         }
     }
-
 }

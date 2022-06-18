@@ -6,18 +6,12 @@ public class UserHelper {
     String phoneNo;
     String password;
 
-
-
-
-
     public UserHelper(String username, String email, String phoneNo, String password) {
         this.username = username;
         this.email = email;
         this.phoneNo = phoneNo;
         this.password = password;
     }
-
-
 
     public String getUsername() {
         return username;
@@ -54,5 +48,4 @@ public class UserHelper {
     public UserHelper() {
         //error handling purposes
     }
-
 }

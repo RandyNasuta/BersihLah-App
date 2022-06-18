@@ -22,13 +22,8 @@ import java.util.ArrayList;
 
 public class OrderList extends AppCompatActivity {
 
-
     DatabaseReference ref;
-
     ImageView homeButton, articleButton, faqButton;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,8 +75,6 @@ public class OrderList extends AppCompatActivity {
             }
         });
 
-
-
         DatabaseReference rootNode = FirebaseDatabase.getInstance().getReference();
         ref = rootNode.child("orders");
 
@@ -102,16 +95,11 @@ public class OrderList extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-
-
         });
-
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 
         orderRV.setLayoutManager(linearLayoutManager);
         orderRV.setAdapter(itemRecyclerAdapter);
-
-
     }
 }

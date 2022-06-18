@@ -45,6 +45,5 @@ public class Faq extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }

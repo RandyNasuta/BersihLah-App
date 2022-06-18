@@ -26,8 +26,6 @@ public class Login extends AppCompatActivity {
     TextInputLayout passwordLogin;
     Button loginButton;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,17 +49,9 @@ public class Login extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
                 loginUser(v);
-//                if(validateUsername() && validatePassword()){
-//                    Intent intent = new Intent(Login.this, MainActivity.class);
-//                    startActivity(intent);
-//                }
-
             }
         });
-
-
     }
 
     private Boolean validateUsername(){
@@ -78,12 +68,10 @@ public class Login extends AppCompatActivity {
             usernameLogin.setErrorEnabled(false);
             return true;
         }
-
     }
 
     private Boolean validatePassword(){
         String username = passwordLogin.getEditText().getText().toString();
-
 
         if(username.isEmpty()){
             passwordLogin.setError("Please fill in your password");
@@ -156,15 +144,10 @@ public class Login extends AppCompatActivity {
                 else {
                     usernameLogin.setError("No user found");
                 }
-
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
-
     }
-
 }

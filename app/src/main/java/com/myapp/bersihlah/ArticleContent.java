@@ -15,10 +15,8 @@ public class ArticleContent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article_content);
 
-
         articleTitle = findViewById(R.id.articleTitleContent);
         articleContent = findViewById(R.id.articleContent);
-
         articleTitle.setText(getIntent().getStringExtra("title"));
         articleContent.setText(getIntent().getStringExtra("content"));
     }

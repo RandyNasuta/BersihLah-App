@@ -30,20 +30,12 @@ import java.util.TimerTask;
 public class MainActivity extends AppCompatActivity {
 
     ViewPager bannerViewPager;
-
     TabLayout indicatorTab;
-
     List<BannerItems> bannerItems;
-
     BannerItemsAdapter bannerItemsAdapter;
-
     String username1;
-
     ImageView allInOne, bedroom, livingRoom, toilet, kitchen, homeFaq, profilePic, homeOrderList, articleButton;
-
     TextView welcomeText;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,27 +51,14 @@ public class MainActivity extends AppCompatActivity {
         toilet = findViewById(R.id.toilet);
         kitchen = findViewById(R.id.kitchen);
         bedroom = findViewById(R.id.bedroom);
-
         homeFaq = findViewById(R.id.homeFaq);
-
         profilePic = findViewById(R.id.profilePic);
-
         articleButton = findViewById(R.id.homeArticle);
-
-
         homeOrderList = findViewById(R.id.homeOrderList);
-//        chipNavigationBar = findViewById(R.id.bottomNav);
-//        getSupportFragmentManager().beginTransaction().replace(R.id.container, new ActivityMainFragment()).commit();
-//        bottomNavMenu();
 
         username1 = getIntent().getStringExtra("username");
         String phoneNo = getIntent().getStringExtra("phoneNo");
         String email = getIntent().getStringExtra("email");
-
-
-
-
-
 
         welcomeText.setText("Welcome " + username1);
 
@@ -198,17 +177,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
-
-
-
-
-
     }
-
-
 
     private void setBannerAdapter(List<BannerItems> bannerItems){
 
@@ -220,32 +189,22 @@ public class MainActivity extends AppCompatActivity {
         Timer sliderTimer = new Timer();
         sliderTimer.scheduleAtFixedRate(new AutoSlider(), 4000, 6000);
         indicatorTab.setupWithViewPager(bannerViewPager, true);
-
     }
 
     class AutoSlider extends TimerTask {
-
-
         @Override
         public void run() {
-
             MainActivity.this.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     if(bannerViewPager.getCurrentItem() < bannerItems.size()-1){
-
                         bannerViewPager.setCurrentItem(bannerViewPager.getCurrentItem()+1);
-
                     }
                     else{
-
                         bannerViewPager.setCurrentItem(0);
-
                     }
                 }
             });
-
         }
-
     }
 }

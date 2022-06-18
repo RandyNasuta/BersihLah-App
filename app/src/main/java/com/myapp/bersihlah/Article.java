@@ -42,7 +42,6 @@ public class Article extends AppCompatActivity {
         RecyclerView articleRV = findViewById(R.id.articleListRV);
         ArticleRecyclerAdapter articleRecyclerAdapter = new ArticleRecyclerAdapter(this, articleModels);
 
-
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,40 +75,27 @@ public class Article extends AppCompatActivity {
             }
         });
 
-
-
         DatabaseReference rootNode = FirebaseDatabase.getInstance().getReference();
         ref = rootNode.child("articles");
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
-
                 for (DataSnapshot dsp : dataSnapshot.getChildren()) {
                     ArticleModel articleHelper = new ArticleModel(dsp.child("source").getValue(String.class), dsp.child("articleName").getValue(String.class));
                     articleModels.add(articleHelper);
-
                 }
                 articleRecyclerAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
-
-
         });
-
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 
         articleRV.setLayoutManager(linearLayoutManager);
         articleRV.setAdapter(articleRecyclerAdapter);
-
-
     }
-
-
 }

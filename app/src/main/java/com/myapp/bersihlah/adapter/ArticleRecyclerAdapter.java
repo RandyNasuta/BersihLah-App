@@ -52,11 +52,7 @@ public class ArticleRecyclerAdapter extends RecyclerView.Adapter<ArticleRecycler
                 context.startActivity(i);
             }
         });
-
-
     }
-
-
 
     @Override
     public int getItemCount() {
@@ -64,8 +60,6 @@ public class ArticleRecyclerAdapter extends RecyclerView.Adapter<ArticleRecycler
     }
 
     public static final class ItemViewHolder extends RecyclerView.ViewHolder{
-
-
         TextView articleName, source;
 
         public ItemViewHolder(@NonNull View itemView) {
@@ -73,8 +67,6 @@ public class ArticleRecyclerAdapter extends RecyclerView.Adapter<ArticleRecycler
 
             articleName = itemView.findViewById(R.id.articleTitle);
             source = itemView.findViewById(R.id.articleSource);
-
         }
     }
-
 }

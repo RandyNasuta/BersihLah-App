@@ -13,7 +13,6 @@ public class profileActivity extends AppCompatActivity {
     TextView usernameText, phoneNoText, emailText;
     Button logoutButton, homeButton;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +50,5 @@ public class profileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }

@@ -39,28 +39,13 @@ public class Register extends AppCompatActivity {
                 rootNode = FirebaseDatabase.getInstance();
                 ref = rootNode.getReference("users");
 
-//                String username = registerUsername.getEditText().getText().toString();
-//                String email = registerEmail.getEditText().getText().toString();
-//                String phoneNo = registerPhoneNo.getEditText().getText().toString();
-//                String password = registerPassword.getEditText().getText().toString();
-//
-//                UserHelper userData = new UserHelper(username,email, phoneNo, password);
-//
-//                ref.child(phoneNo).setValue(userData);
-
-
                 registerUser(view);
                 if(validateUsername() && validateEmail() && validatePassword() && validatePhoneNo()){
                     Intent intent = new Intent(Register.this, Login.class);
                     startActivity(intent);
                 }
-
-
             }
-
         });
-
-
     }
 
     private Boolean validateUsername(){
@@ -79,7 +64,6 @@ public class Register extends AppCompatActivity {
             registerUsername.setErrorEnabled(false);
             return true;
         }
-
     }
 
     private Boolean validateEmail(){
@@ -99,7 +83,6 @@ public class Register extends AppCompatActivity {
             registerEmail.setErrorEnabled(false);
             return true;
         }
-
     }
 
     private Boolean validatePhoneNo(){
@@ -114,7 +97,6 @@ public class Register extends AppCompatActivity {
             registerPhoneNo.setErrorEnabled(false);
             return true;
         }
-
     }
 
     private Boolean validatePassword(){
@@ -129,7 +111,6 @@ public class Register extends AppCompatActivity {
             registerPassword.setErrorEnabled(false);
             return true;
         }
-
     }
 
 
@@ -147,5 +128,4 @@ public class Register extends AppCompatActivity {
 
         ref.child(username).setValue(userData);
     }
-
 }

@@ -5,7 +5,7 @@ Home Cleaning Service "BersihLah"
 
 BersihLah adalah aplikasi layanan kebersihan rumah online yang menawarkan platform android di mana masyarakat dapat memesan petugas kebersihan untuk membantu membersihkan rumah. Aplikasi ini akan memberikan layanan mulai dari hanya membersihkan satu kamar hingga pembersihan rumah secara ekstensif. target penggunanya aplikasi kami adalah masyarakat umum yang sibuk sehingga tidak dapat membersihkan rumahnya sendiri.
 
-Tools yang digunakan:
+Tools yang digunakan
 IDE: Android Studio
 Bahasa Pemrograman: Java
 

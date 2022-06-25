@@ -3,9 +3,11 @@ BersihLah App Software Engineering AOL Project
 
 Home Cleaning Service "BersihLah"
 
-BersihLah adalah aplikasi layanan kebersihan rumah online yang menawarkan platform dimana masyarakat dapat memesan petugas kebersihan untuk membantu membersihkan rumah. 
-Aplikasi ini akan memberikan layanan mulai dari hanya membersihkan satu kamar hingga pembersihan rumah secara ekstensif. target penggunanya aplikasi kami adalah 
-masyarakat umum yang sibuk sehingga tidak dapat membersihkan rumahnya sendiri.
+BersihLah adalah aplikasi layanan kebersihan rumah online yang menawarkan platform android di mana masyarakat dapat memesan petugas kebersihan untuk membantu membersihkan rumah. Aplikasi ini akan memberikan layanan mulai dari hanya membersihkan satu kamar hingga pembersihan rumah secara ekstensif. target penggunanya aplikasi kami adalah masyarakat umum yang sibuk sehingga tidak dapat membersihkan rumahnya sendiri.
+
+Tools yang digunakan:
+IDE: Android Studio
+Bahasa Pemrograman: Java
 
 Nama-Nama Anggota Kelompok (LQ01):
 1. Randy Nasuta - 2440061455
